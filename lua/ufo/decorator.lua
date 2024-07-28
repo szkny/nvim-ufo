@@ -128,11 +128,7 @@ local function onEnd(name, tick)
     end
     if needRedraw then
         log.debug('Need redraw.')
-        if utils.has10() then
-            api.nvim__redraw({valid = true, flush = true})
-        else
-            cmd('redraw')
-        end
+        cmd('redraw')
     end
     self.lastWinid = self.curWinid
 end
